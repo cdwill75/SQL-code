@@ -3,13 +3,13 @@ FROM PortfolioProjects..titanic
 
 
 --ADDED  PORT, CLASS,  AND SURVIVAL COLUMNS TO TABLE
-ALTER TABLE PortfolioProjects..titanic2
+ALTER TABLE PortfolioProjects..titanic
 ADD  Port VARCHAR (255), Class VARCHAR (255), Survival VARCHAR (255);
 
 
 --UPDATED NEWLY ADDED COLUMNS WITH THE RESULTS OF QUERIES PERFOMED AND
 --USED CASE STATEMENT TO ADD A CITY NAME TO EMBARKED COLUMN INSTEAD OF INITIAL
-UPDATE PortfolioProjects..titanic2
+UPDATE PortfolioProjects..titanic
 SET 
 PORT = CASE 
 		WHEN embarked = 'S' THEN 'Southhampton'
@@ -30,7 +30,7 @@ END
 
 --UPDATED NEWLY ADDED COLUMNS WITH THE RESULTS OF QUERIES PERFOMED
 --AND USE CASE STATEMENT TO LABEL CLASS FIRST, SECOND, OR THIRD
-UPDATE PortfolioProjects..titanic2
+UPDATE PortfolioProjects..titanic
 SET
 Class =  Case	
 		WHEN pclass = '1' THEN 'First'
@@ -126,7 +126,7 @@ UPDATE PortfolioProjects..titanic
 SET age = ROUND(age, 0)
 
 
-
+--Query of the columns that were cleaned
 SELECT 
 	Class,
 	Title,
@@ -137,3 +137,4 @@ SELECT
 	age,
 	Port
 FROM PortfolioProjects..titanic
+
